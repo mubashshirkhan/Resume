@@ -15,10 +15,10 @@
         }
 
         :root {
-            --primary-color: #2ecc71;
-            --secondary-color: #27ae60;
-            --dark-color: #2c3e50;
-            --light-color: #ecf0f1;
+            --primary-color: #549deb;
+            --secondary-color: #B9D4F1;
+            --dark-color: #21273D;
+            --light-color: #F1F6F8;
         }
 
         html {
@@ -82,7 +82,7 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?coding') center/cover;
+            background: var(--dark-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -198,10 +198,12 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
+        
         }
 
         .form-group textarea {
             height: 150px;
+            resize: none;
         }
 
         /* Footer */
@@ -284,16 +286,28 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>I'm a passionate full-stack developer with expertise in modern web technologies...</p>
+                <p> I'm Mubashshir a skilled and creative web developer with a passion for creating  beautiful, responsive, and user-friendly websites. </p>
             </div>
             <div class="skills">
                 <div class="skill-card">
                     <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
+                    <h3>HTML</h3>
                 </div>
                 <div class="skill-card">
                     <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-react"></i>
+                    <h3>REACT</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>MONGODB</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>MYSQL</h3>
                 </div>
                 <!-- Add more skill cards -->
             </div>
@@ -306,7 +320,7 @@
             <div class="project-card">
                 <img src="project1.jpg" alt="Project 1" class="project-img">
                 <div class="project-info">
-                    <h3>E-commerce Platform</h3>
+                    <h3>Portfolio website</h3>
                     <p>My old portfolio designd  website using HTML and CSS </p>
                 </div>
             </div>
@@ -332,9 +346,9 @@
 
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/mubashshirkhan" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/mubashshir-khan-492a30332" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/mubashshir_kh" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
         <p>&copy; 2023 Mubashshir Khan. All rights reserved.</p>
     </footer>
@@ -379,6 +393,13 @@
         document.querySelector('.contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
             // Add your form submission logic here
+            const formData = new FormData(e.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            const mailtoLink = `mailto:mubashshirk7666@gmail.com?subject=Contact%20Form%20Submission&body=Name:%20${name}%0AEmail:%20${email}%0AMessage:%20${message}`;
+            window.location.href = mailtoLink;
             alert('Thank you for your message! I will get back to you soon.');
         });
     </script>
